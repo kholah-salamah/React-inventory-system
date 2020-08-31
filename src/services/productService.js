@@ -1,80 +1,79 @@
 import categories, { addCategory } from "./fakeCategoryService";
 import { getCategoryById } from "./fakeCategoryService";
-
 import { generateId } from "../utils/generateIDs";
-import { getCurrentUSer } from "./fakeUserService";
+
 export const products = [
   {
     _id: 1,
     name: "Face Mask",
-    category: { _id: 1, name: "SkinCare" },
+    category: { _id: 1, name: "Skin Care" },
     enabled: true,
   },
 
   {
     _id: 2,
     name: "Facial Cleanser",
-    category: { _id: 1, name: "SkinCare" },
+    category: { _id: 1, name: "Skin Care" },
     enabled: true,
   },
   {
     _id: 3,
-    name: "SunscreenCream",
-    category: { _id: 1, name: "SkinCare" },
+    name: "Sun screen Cream",
+    category: { _id: 1, name: "Skin Care" },
     enabled: true,
   },
   {
     _id: 4,
     name: "Shampoo",
-    category: { _id: 2, name: "HairCare" },
+    category: { _id: 2, name: "Hair Care" },
     enabled: true,
   },
   {
     _id: 5,
     name: "Conditioner",
-    category: { _id: 2, name: "HairCare" },
+    category: { _id: 2, name: "Hair Care" },
     enabled: true,
   },
   {
     _id: 6,
-    name: "OilTreatment",
-    category: { _id: 2, name: "HairCare" },
+    name: "Oil Treatment",
+    category: { _id: 2, name: "Hair Care" },
     enabled: true,
   },
   {
     _id: 7,
-    name: "LipTint",
-    category: { _id: 3, name: "MakeUp" },
+    name: "Lip Tint",
+    category: { _id: 3, name: "Make Up" },
     enabled: true,
   },
   {
     _id: 8,
-    name: "EyeShadowPalette",
-    category: { _id: 3, name: "MakeUp" },
+    name: "Eye Shadow Palette",
+    category: { _id: 3, name: "Make Up" },
     enabled: true,
   },
   {
     _id: 9,
     name: "Fondation",
-    category: { _id: 3, name: "MakeUp" },
+    category: { _id: 3, name: "Make Up" },
     enabled: true,
   },
   {
     _id: 10,
-    name: "BloodPressureMonitor",
-    category: { _id: 4, name: "MedicalSupplies" },
+    name: "Blood Pressure Monitor",
+    category: { _id: 4, name: "Medical Supplies" },
     enabled: true,
   },
   {
     _id: 11,
-    name: "BloodGlucoseMonitor",
-    category: { _id: 4, name: "MedicalSupplies" },
+    name: "Blood Glucose Monitor",
+    category: { _id: 4, name: "Medical Supplies" },
     enabled: false,
   },
   {
     _id: 12,
     name: "Stethoscope",
-    category: { _id: 4, name: "MedicalSupplies" },
+    category: { _id: 4, name: "Medical Supplies" },
     enabled: true,
   },
 ];

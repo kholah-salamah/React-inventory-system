@@ -23,24 +23,24 @@ class ProductsTable extends Component {
         className="btn btn-primary"
         onClick={() => this.props.onDelete(item)}
       >
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <i className="fa fa-trash-o" aria-hidden="true"></i>
       </button>
     ),
   };
 
   render() {
-    console.log("Product Table render");
+    //console.log("Product Table render");
     const { paginatedProducts, onSort, sortColumn, user } = this.props;
 
     let cols = [
       {
         path: "name",
-        lablel: "ProductNAME",
+        lablel: "Product NAME",
         content: (item) => (
           <Link to={`/products/${item._id}`}>{item.name} </Link>
         ),
       },
-      { path: "category.name", lablel: "ProductCategory", sortable: true },
+      { path: "category.name", lablel: "Product Category", sortable: true },
     ];
 
     if (user.role.name === "Admin")

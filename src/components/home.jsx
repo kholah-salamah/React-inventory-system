@@ -11,8 +11,8 @@ class Home extends Component {
             <br />
             <p className="lead">
               This is an Inventory system demo.
-              <br /> All you get is this React App Based Inventory system that
-              allows three different users to use it based on thier role .
+              <br /> This React App Based Inventory system that allows three
+              different users to use it based on thier role .
             </p>
             <br />
             <Link

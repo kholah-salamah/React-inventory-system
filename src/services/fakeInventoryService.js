@@ -7,7 +7,7 @@ export const inventory = [
     product: {
       _id: 1,
       name: "Face Mask",
-      category: { _id: "1", name: "SkinCare" },
+      category: { _id: "1", name: "Skin Care" },
       enabled: "true",
     },
     unit: { _id: 3, name: "dozen" },
@@ -19,7 +19,7 @@ export const inventory = [
     product: {
       _id: 2,
       name: "Facial Cleanser",
-      category: { _id: 1, name: "SkinCare" },
+      category: { _id: 1, name: "Skin Care" },
       enabled: false,
     },
     unit: { _id: 1, name: "bottle" },
@@ -31,7 +31,7 @@ export const inventory = [
     product: {
       _id: 4,
       name: "Shampoo",
-      category: { _id: 2, name: "HairCare" },
+      category: { _id: 2, name: "Hair Care" },
       enabled: false,
     },
     unit: { _id: 3, name: "dozen" },

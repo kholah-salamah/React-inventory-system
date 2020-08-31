@@ -8,7 +8,7 @@ class categories extends Component {
   componentDidMount() {
     let categories = APIcategories.getCategories();
     this.setState({ categories });
-    console.log(categories);
+    // console.log(categories);
   }
   render() {
     return (

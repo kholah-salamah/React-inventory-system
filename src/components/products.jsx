@@ -16,11 +16,14 @@ class Products extends Component {
     pageSize: 3,
     currentPage: 1,
     sortColumn: { column: "name", order: "asc" },
-    selectedCategory: { _id: "", name: "AllCategories" },
+    selectedCategory: { _id: "", name: "All Categories" },
   };
 
   componentDidMount() {
-    const categories = [{ _id: "", name: "AllCategories" }, ...getCategories()];
+    const categories = [
+      { _id: "", name: "All Categories" },
+      ...getCategories(),
+    ];
 
     const products = getProduct();
     this.setState({ products, categories });
@@ -36,9 +39,10 @@ class Products extends Component {
     let cloned = [...this.state.products];
     let index = cloned.indexOf(product);
     cloned[index] = { ...cloned[index] }; // if dirctly edited it will edit the state object dirctly cause it is the same reffrence
-    cloned[index].enabled = !cloned[index].enabled;
-    alert("Are you sure of Changing product Status");
-    this.setState({ products: cloned });
+    if (window.confirm("Are you sure of Changing product Status")) {
+      cloned[index].enabled = !cloned[index].enabled;
+      this.setState({ products: cloned });
+    }
   };
   handleDelete = (product) => {
     let cloned = [...this.state.products];
@@ -74,7 +78,7 @@ class Products extends Component {
 
     return (
       <React.Fragment>
-        <h3 className="headline">ProductsTable</h3>
+        <h3 className="headline">Products Table</h3>
         <div className="row transaction-row">
           <div className="col-12  col-sm-12   col-md-3  col-lg-3">
             {user.role.name === "Admin" && (
@@ -84,7 +88,7 @@ class Products extends Component {
                 to="/products/new"
                 // style={{ marginBottom: 20 }}
               >
-                AddProduct
+                Add Product
               </Link>
             )}
             <ListGroup

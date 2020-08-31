@@ -19,7 +19,6 @@ class Transactions extends Component {
     selectedOperation: { operation: "All Operations", _id: "" },
   };
   componentDidMount() {
-    // console.log("Cdm");
     const operationTypes = [
       { operation: "All Operations", _id: "" },
       ...getOperationTypes(),
@@ -59,7 +58,7 @@ class Transactions extends Component {
     //console.log("render", selectedOperation, filter);
     return (
       <React.Fragment>
-        <h3 className="headline">TransactionsTable</h3>
+        <h3 className="headline">Transactions Table</h3>
         <div className="row transaction-row">
           <div className="col-12  col-sm-12 col-md-3 col-lg-3 ">
             <Link

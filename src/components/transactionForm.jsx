@@ -20,14 +20,16 @@ class TransactionForm extends Form {
     unites: [],
     adminRoles: [],
   };
+
   componentDidMount() {
+    console.log("CDM");
     //avoiding form error according to the hidden Admin select role element (add/withdraw)
     const user = getCurrentUSer();
     if (user.role.type !== "all") {
       // forbidden practice to dirctly modify the state this.state.data.operation = user.role._id;
-      const clonedState = this.state.data;
+      const clonedState = { ...this.state.data };
       clonedState.operation = user.role._id;
-      this.setState({ date: clonedState });
+      this.setState({ data: clonedState });
     }
 
     let products = getProduct();
@@ -47,7 +49,17 @@ class TransactionForm extends Form {
     // call server
 
     addInventoyTransaction(this.state.data);
-    this.props.history.push("/inventory");
+
+    // Reset State after submitting the form
+    const user = getCurrentUSer();
+    let clearFormData = {
+      productId: "",
+      unitId: "",
+      quantity: "",
+      operation: user.role._id,
+    };
+    this.setState({ data: clearFormData });
+    //this.props.history.push("/inventory");
   };
 
   render() {
@@ -57,7 +69,7 @@ class TransactionForm extends Form {
 
     return (
       <React.Fragment>
-        <h1 className="headline">TransactionForm</h1>
+        <h1 className="headline">Transaction Form</h1>
         <form onSubmit={this.handleSubmmit} className="form-style">
           {this.renderSelect(
             "productId",
@@ -72,7 +84,7 @@ class TransactionForm extends Form {
           {AdminSession &&
             this.renderSelect(
               "operation",
-              "AdminRole",
+              "Operation Type",
               "_id",
               "role",
               "number",
@@ -80,7 +92,7 @@ class TransactionForm extends Form {
             )}
 
           {this.renderinput("quantity", "Quantity", "number")}
-          {this.renderButton("add Transaction")}
+          {this.renderButton("Add Transaction")}
         </form>
       </React.Fragment>
     );

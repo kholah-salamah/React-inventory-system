@@ -91,11 +91,11 @@ class Inventory extends Component {
 
     return (
       <React.Fragment>
-        <h3 className="inventory-headline">InventoryTable</h3>
+        <h3 className="inventory-headline">Inventory Table</h3>
         <div className="row transaction-row">
           <div className="col-12  col-sm-12   col-md-6  offset-md-3  offset-lg-3 col-lg-6">
             <h6 className="inventory-items-count">
-              showing {paginatedInventory.length} products of {inventory.length}
+              Showing {paginatedInventory.length} products of {inventory.length}
             </h6>
             <InventoryTable
               paginatedInventory={paginatedInventory}

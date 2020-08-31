@@ -1,9 +1,9 @@
 import { generateId } from "../utils/generateIDs";
 export const categories = [
-  { _id: 1, name: "SkinCare" },
-  { _id: 2, name: "HairCare" },
-  { _id: 3, name: "MakeUp" },
-  { _id: 4, name: "MedicalSupplies" },
+  { _id: 1, name: "Skin Care" },
+  { _id: 2, name: "Hair Care" },
+  { _id: 3, name: "Make Up" },
+  { _id: 4, name: "Medical Supplies" },
 ];
 
 export default function getCategories() {

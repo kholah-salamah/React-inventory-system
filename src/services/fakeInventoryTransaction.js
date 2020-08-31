@@ -13,7 +13,7 @@ export const inventoryTransactions = [
     product: {
       _id: 1,
       name: "Face Mask",
-      category: { _id: "1", name: "SkinCare" },
+      category: { _id: "1", name: "Skin Care" },
       enabled: "true",
     },
 
@@ -32,7 +32,7 @@ export const inventoryTransactions = [
     product: {
       _id: 2,
       name: "Facial Cleanser",
-      category: { _id: "1", name: "SkinCare" },
+      category: { _id: "1", name: "Skin Care" },
       enabled: "true",
     },
 
@@ -51,7 +51,7 @@ export const inventoryTransactions = [
     product: {
       _id: 4,
       name: "Shampoo",
-      category: { _id: 2, name: "HairCare" },
+      category: { _id: 2, name: "Hair Care" },
       enabled: false,
     },
 
@@ -108,15 +108,18 @@ export function addInventoyTransaction(trnasactionFormObj) {
   }
 
   // prettier-ignore
+  //if (!isAdded && (!inventory || trnasactionFormObj.quantity > oldNumberInStock))
   try {
-    if (!isAdded && (!inventory || trnasactionFormObj.quantity > oldNumberInStock))
-      throw Error("There is no stock or insufficient number in stock please refill your inventory ");
+    if (!isAdded && !inventory )
+      throw Error("There is no stock please refill your inventory");
+    else if (!isAdded && trnasactionFormObj.quantity > oldNumberInStock )
+      throw Error(`Insufficient number in stock, product in stock is just  "${oldNumberInStock}" please refill your inventory` );
   }
   catch (ex) {
     alert(ex);
     return;
     }
-  console.log("atch an error");
+  //console.log("atch an error");
   if (inventory) inventory.numberInstock = newNmberInStock;
 
   // generate id
@@ -134,47 +137,3 @@ export function addInventoyTransaction(trnasactionFormObj) {
   });
   alert("transaction has been added");
 }
-
-// export default function setNumberInStock(quantity, productId, unitId) {
-//   let inventory = getInvetoryRecord(productId, unitId);
-
-//   if (!inventory)
-//     inventory = {
-//       productId: productId,
-//       unitId,
-//     };
-
-//   if (user.role.type === "add") {
-//     let numberInstock = +quantity;
-//     return numberInstock;
-//   }
-//   //first we need to get numberInStock value from invetory
-
-//   if (user.role.type === "withdarw") {
-//     numberInstock =
-//       quantity <= oldNumberInstock
-//         ? oldNumberInstock - quantity
-//         : "transaction if forbiden";
-//     return numberInstock;
-//   }
-// }
-
-// if (!inventory) {
-//   if (!isAdded) {
-//     throw Error("insufficient number in stock");
-//   } else {
-//     addInventoryItem(trnasactionFormObj);
-//   }
-//   // in case ther is an inventory record
-// } else {
-//   if (!isAdded) {
-//     if (trnasactionFormObj.quantity <= inventory.numberInstock) {
-//       inventory.numberInstock =
-//         inventory.numberInstock - trnasactionFormObj.quantity;
-//     } else {
-//       throw Error("insufficient number in stock");
-//     }
-//   } else {
-//     inventory.numberInstock += trnasactionFormObj.quantity;
-//   }
-// }

@@ -3,7 +3,7 @@ import BooleanCheck from "../common/booleanCheck";
 import Table from "../common/table";
 class TransactionTable extends Component {
   cols = [
-    { path: "product.name", lablel: "ProductName", sortable: true },
+    { path: "product.name", lablel: "Product Name", sortable: true },
     { path: "product.category.name", lablel: "Category", sortable: true },
     { path: "unit.name", lablel: "Unit", sortable: true },
     {
@@ -30,32 +30,6 @@ class TransactionTable extends Component {
           onSort={onSort}
           sortColumn={sortColumn}
         />
-        {/* <table className="table">
-          <thead>
-            <tr>
-              <th>ProductName</th>
-              <th>ProductCategory</th>
-              <th>Unit</th>
-              <th>date</th>
-              <th>Quantity</th>
-              <th>Operation</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paginatedTransactions.map((t) => (
-              <tr key={t._id}>
-                <td>{t.product.name}</td>
-                <td>{t.product.category.name}</td>
-                <td>{t.unit.name}</td>
-                <td>{t.date.toString()}</td>
-                <td>{t.quantity}</td>
-                <td>
-                  <BooleanCheck isAdded={t.isAdded} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table> */}
       </React.Fragment>
     );
   }
