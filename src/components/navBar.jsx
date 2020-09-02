@@ -12,11 +12,11 @@ class Navbar extends Component {
             Home
           </NavLink>
 
-          <NavLink className="nav-item nav-link" to="/transactions">
-            Transactions
-          </NavLink>
           <NavLink className="nav-item nav-link" to="/products">
             Products
+          </NavLink>
+          <NavLink className="nav-item nav-link" to="/transactions">
+            Transactions
           </NavLink>
           <NavLink className="nav-item nav-link inventory-link" to="/inventory">
             Inventory
